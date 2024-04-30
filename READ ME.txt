@@ -1,5 +1,6 @@
 READ ME:
 
-Les assets utilisées dans ce projet font partie de l'assets pack "Sprout Lands" crée par l'utilisateur Cup Nooble dans le site https://cupnooble.itch.io/sprout-lands-asset-pack.
+Les assets utilisées dans ce projet font partie de l'assets pack "Sprout Lands" crée par 
+l'utilisateur Cup Nooble dans le site https://cupnooble.itch.io/sprout-lands-asset-pack.
 Une licence gratuite est garantie gratuitement: ce pack d'assets peut être utilisé dans n'importe quel projet non commercial.
 Le programme Tiled a été employé dans le but de créer la map utilisé pour le projet.
