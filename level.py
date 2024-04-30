@@ -3,6 +3,13 @@ from settings import *
 from sprites import Generic, WildFlower, Tree
 from pytmx.util_pygame import load_pygame
 
+class Level:
+
+    def __init__(self):
+        self.display_surface = pygame.display.get_surface()
+        self.all_sprites = CameraGroup()
+        self.collision_sprites = pygame.sprite.Group()
+
 class CameraGroup(pygame.sprite.Group):
     def __init__(self):
         super().__init__()
