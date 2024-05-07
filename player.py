@@ -19,7 +19,7 @@ class Player(pygame.sprite.Sprite):
 		self.import_assets()
 		self.direction = pygame.math.Vector2()
 		self.pos = pygame.math.Vector2(self.rect.center)
-		self.speed = 400
+		self.speed = 200
 
 
 		#collision
