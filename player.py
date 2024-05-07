@@ -101,3 +101,8 @@ class Player(pygame.sprite.Sprite):
 		self.frame_index +=4 *dt
 		if self.frame_index >= len(self.animations[self.status]): self.frame_index = 0
 		self.image = self.animations[self.status][int(self.frame_index)]
+
+	def get_status(self):
+		# if player is not moving then we will add _idle to the status
+		if self.direction.magnitude() == 0:
+			self.status = self.status.split('_')[0] + '_idle'
