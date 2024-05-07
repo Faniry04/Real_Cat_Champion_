@@ -28,6 +28,36 @@ class Player(pygame.sprite.Sprite):
 		self.collision_sprites = collision_sprites
 
 
+	def import_assets(self):
+		self.animations = {'up': [[], [], [], []], 'down': [[], [], [], []], 'left': [[], [], [], []],'right': [[], [], [], []],
+						   'up_idle': [[], []], 'down_idle': [[], []], 'left_idle': [[], []], 'right_idle': [[], []]}
+
+		self.animations['up'][0] = pygame.image.load("import/graphics/character/up/0.png").convert_alpha()
+		self.animations['up'][1] = pygame.image.load('import/graphics/character/up/1.png').convert_alpha()
+		self.animations['up'][2] = pygame.image.load('import/graphics/character/up/2.png').convert_alpha()
+		self.animations['up'][3] = pygame.image.load('import/graphics/character/up/3.png').convert_alpha()
+		self.animations['down'][0] = pygame.image.load('import/graphics/character/down/0.png').convert_alpha()
+		self.animations['down'][1] = pygame.image.load('import/graphics/character/down/1.png').convert_alpha()
+		self.animations['down'][2] = pygame.image.load('import/graphics/character/down/2.png').convert_alpha()
+		self.animations['down'][3] = pygame.image.load('import/graphics/character/down/3.png').convert_alpha()
+		self.animations['right'][0] = pygame.image.load('import/graphics/character/right/0.png').convert_alpha()
+		self.animations['right'][1] = pygame.image.load('import/graphics/character/right/1.png').convert_alpha()
+		self.animations['right'][2] = pygame.image.load('import/graphics/character/right/2.png').convert_alpha()
+		self.animations['right'][3] = pygame.image.load('import/graphics/character/right/3.png').convert_alpha()
+		self.animations['left'][0] = pygame.image.load('import/graphics/character/left/0.png').convert_alpha()
+		self.animations['left'][1] = pygame.image.load('import/graphics/character/left/1.png').convert_alpha()
+		self.animations['left'][2] = pygame.image.load('import/graphics/character/left/2.png').convert_alpha()
+		self.animations['left'][3] = pygame.image.load('import/graphics/character/left/3.png').convert_alpha()
+		self.animations['up_idle'][0] = pygame.image.load("import/graphics/character/up_idle/0.png").convert_alpha()
+		self.animations['up_idle'][1] = pygame.image.load("import/graphics/character/up_idle/1.png").convert_alpha()
+		self.animations['down_idle'][0] = pygame.image.load("import/graphics/character/down_idle/0.png").convert_alpha()
+		self.animations['down_idle'][1] = pygame.image.load("import/graphics/character/down_idle/1.png").convert_alpha()
+		self.animations['right_idle'][0] = pygame.image.load("import/graphics/character/right_idle/0.png").convert_alpha()
+		self.animations['right_idle'][1] = pygame.image.load("import/graphics/character/right_idle/1.png").convert_alpha()
+		self.animations['left_idle'][0] = pygame.image.load("import/graphics/character/left_idle/0.png").convert_alpha()
+		self.animations['left_idle'][1] = pygame.image.load("import/graphics/character/left_idle/1.png").convert_alpha()
+
+
 	def input(self):
 		keys = pygame.key.get_pressed()
 
