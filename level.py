@@ -1,5 +1,6 @@
 import pygame
 from settings import *
+from player import Player
 from sprites import Generic, WildFlower, Tree
 from pytmx.util_pygame import load_pygame
 
