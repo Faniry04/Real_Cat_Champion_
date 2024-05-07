@@ -30,6 +30,10 @@ class Level:
         for x, y, surf in tmx_data.get_layer_by_name('Collision').tiles():
             Generic((x * TILE_SIZE, y * TILE_SIZE), pygame.Surface((TILE_SIZE, TILE_SIZE)), self.collision_sprites)
 
+
+
+
+
 class CameraGroup(pygame.sprite.Group):
     def __init__(self):
         super().__init__()
