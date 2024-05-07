@@ -10,6 +10,7 @@ class Level:
         self.display_surface = pygame.display.get_surface()
         self.all_sprites = CameraGroup()
         self.collision_sprites = pygame.sprite.Group()
+        self.setup()
 
     def setup(self):
         tmx_data = load_pygame('import/data/final_map_.tmx')
