@@ -1,6 +1,6 @@
 import pygame
 import sys
-
+from level import Level
 from settings import *
 
 
@@ -11,6 +11,7 @@ class Game:
         self.screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
         pygame.display.set_caption('Real Cat Champion')
         self.clock = pygame.time.Clock()
+        self.level = Level()
 
 
     def run(self):
