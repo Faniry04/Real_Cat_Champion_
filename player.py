@@ -124,3 +124,9 @@ class Player(pygame.sprite.Sprite):
 							self.hitbox.top = sprite.hitbox.bottom
 						self.rect.centery = self.hitbox.centery
 						self.pos.y = self.hitbox.centery
+
+	def update(self, dt):
+		self.input()
+		self.get_status()
+		self.move(dt)
+		self.animate(dt)
