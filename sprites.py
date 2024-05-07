@@ -8,7 +8,6 @@ class Generic(pygame.sprite.Sprite):
         self.rect = self.image.get_rect(topleft = pos)
         self.z = z
         self.hitbox = self.rect.copy().inflate(-self.rect.width * 0.2, -self.rect.height * 0.75)
-
 class WildFlower(Generic):
     def __init__(self, pos, surf, groups):
         super().__init__(pos,surf,groups)
@@ -17,3 +16,5 @@ class WildFlower(Generic):
 class Tree(Generic):
     def __init__(self, pos, surf, groups, name):
         super().__init__(pos, surf, groups)
+
+

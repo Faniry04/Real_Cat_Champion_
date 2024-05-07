@@ -26,10 +26,28 @@ class Player(pygame.sprite.Sprite):
 
 		self.hitbox = self.rect.copy().inflate((-126, -70))
 		self.collision_sprites = collision_sprites
+	def collision(self, direction):
+		for sprite in self.collision_sprites.sprites():
+			if hasattr(sprite, 'hitbox'):
+				if sprite.hitbox.colliderect(self.hitbox):
+					if direction == 'horizontal':
+						if self.direction.x > 0:  # moving right
+							self.hitbox.right = sprite.hitbox.left
+						if self.direction.x < 0:  # moving left
+							self.hitbox.left = sprite.hitbox.right
+						self.rect.centerx = self.hitbox.centerx
+						self.pos.x = self.hitbox.centerx
 
-
+					if direction == 'vertical':
+						if self.direction.y > 0:  # moving down
+							self.hitbox.bottom = sprite.hitbox.top
+						if self.direction.y < 0:  # moving up
+							self.hitbox.top = sprite.hitbox.bottom
+						self.rect.centery = self.hitbox.centery
+						self.pos.y = self.hitbox.centery
 	def import_assets(self):
-		self.animations = {'up': [[], [], [], []], 'down': [[], [], [], []], 'left': [[], [], [], []],'right': [[], [], [], []],
+		self.animations = {'up': [[], [], [], []], 'down': [[], [], [], []], 'left': [[], [], [], []],
+						   'right': [[], [], [], []],
 						   'up_idle': [[], []], 'down_idle': [[], []], 'left_idle': [[], []], 'right_idle': [[], []]}
 
 		self.animations['up'][0] = pygame.image.load("import/graphics/character/up/0.png").convert_alpha()
@@ -52,11 +70,17 @@ class Player(pygame.sprite.Sprite):
 		self.animations['up_idle'][1] = pygame.image.load("import/graphics/character/up_idle/1.png").convert_alpha()
 		self.animations['down_idle'][0] = pygame.image.load("import/graphics/character/down_idle/0.png").convert_alpha()
 		self.animations['down_idle'][1] = pygame.image.load("import/graphics/character/down_idle/1.png").convert_alpha()
-		self.animations['right_idle'][0] = pygame.image.load("import/graphics/character/right_idle/0.png").convert_alpha()
-		self.animations['right_idle'][1] = pygame.image.load("import/graphics/character/right_idle/1.png").convert_alpha()
+		self.animations['right_idle'][0] = pygame.image.load(
+			"import/graphics/character/right_idle/0.png").convert_alpha()
+		self.animations['right_idle'][1] = pygame.image.load(
+			"import/graphics/character/right_idle/1.png").convert_alpha()
 		self.animations['left_idle'][0] = pygame.image.load("import/graphics/character/left_idle/0.png").convert_alpha()
 		self.animations['left_idle'][1] = pygame.image.load("import/graphics/character/left_idle/1.png").convert_alpha()
 
+	def animate(self, dt):
+		self.frame_index +=4 *dt
+		if self.frame_index >= len(self.animations[self.status]): self.frame_index = 0
+		self.image = self.animations[self.status][int(self.frame_index)]
 	def input(self):
 		keys = pygame.key.get_pressed()
 
@@ -77,7 +101,10 @@ class Player(pygame.sprite.Sprite):
 			self.status = 'left'
 		else:
 			self.direction.x = 0
-
+	def get_status(self):
+		#if player is not moving then we will add _idle to the status
+		if self.direction.magnitude() == 0:
+			self.status = self.status.split('_')[0] + '_idle'
 	def move(self,dt):
 
 		# normalizing a vector
@@ -96,37 +123,10 @@ class Player(pygame.sprite.Sprite):
 		self.rect.centery = self.hitbox.centery
 		self.collision('vertical')
 
-	def animate(self, dt):
-		self.frame_index +=4 *dt
-		if self.frame_index >= len(self.animations[self.status]): self.frame_index = 0
-		self.image = self.animations[self.status][int(self.frame_index)]
-	def get_status(self):
-		# if player is not moving then we will add _idle to the status
-		if self.direction.magnitude() == 0:
-			self.status = self.status.split('_')[0] + '_idle'
-
-	def collision(self, direction):
-		for sprite in self.collision_sprites.sprites():
-			if hasattr(sprite, 'hitbox'):
-				if sprite.hitbox.colliderect(self.hitbox):
-					if direction == 'horizontal':
-						if self.direction.x > 0:  # moving right
-							self.hitbox.right = sprite.hitbox.left
-						if self.direction.x < 0:  # moving left
-							self.hitbox.left = sprite.hitbox.right
-						self.rect.centerx = self.hitbox.centerx
-						self.pos.x = self.hitbox.centerx
-
-					if direction == 'vertical':
-						if self.direction.y > 0:  # moving down
-							self.hitbox.bottom = sprite.hitbox.top
-						if self.direction.y < 0:  # moving up
-							self.hitbox.top = sprite.hitbox.bottom
-						self.rect.centery = self.hitbox.centery
-						self.pos.y = self.hitbox.centery
-
 	def update(self, dt):
 		self.input()
 		self.get_status()
+
 		self.move(dt)
 		self.animate(dt)
+
