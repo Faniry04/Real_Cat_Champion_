@@ -37,6 +37,11 @@ class Level:
                 groups=self.all_sprites,
                 z=LAYERS['ground'])
 
+    def run(self, dt):
+        self.display_surface.fill('black')
+        self.all_sprites.custom_draw(self.player)
+        self.all_sprites.update(dt)
+
 
 
 class CameraGroup(pygame.sprite.Group):
