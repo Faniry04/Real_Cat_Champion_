@@ -30,7 +30,11 @@ class Level:
         for x, y, surf in tmx_data.get_layer_by_name('Collision').tiles():
             Generic((x * TILE_SIZE, y * TILE_SIZE), pygame.Surface((TILE_SIZE, TILE_SIZE)), self.collision_sprites)
 
-
+        self.player = Player((960, 730), self.all_sprites, self.collision_sprites)
+        Generic(pos=(0, 0),
+                surf=pygame.image.load("import/graphics/world/ground.png").convert_alpha(),
+                groups=self.all_sprites,
+                z=LAYERS['ground'])
 
 
 
