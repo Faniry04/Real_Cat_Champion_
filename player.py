@@ -9,13 +9,13 @@ class Player(pygame.sprite.Sprite):
 		self.status = 'down_idle'
 		self.frame_index = 0
 
-		# general setup
+		# configuration generale
 		self.import_assets()
 		self.image = self.animations[self.status][self.frame_index]
 		self.rect = self.image.get_rect(center = pos)
 		self.z = LAYERS['main']
 
-		# movement attributes
+		# configuration pour les mouvements
 		self.import_assets()
 		self.direction = pygame.math.Vector2()
 		self.pos = pygame.math.Vector2(self.rect.center)
@@ -23,7 +23,6 @@ class Player(pygame.sprite.Sprite):
 
 
 		#collision
-
 		self.hitbox = self.rect.copy().inflate((-126, -70))
 		self.collision_sprites = collision_sprites
 	def collision(self, direction):
@@ -102,22 +101,22 @@ class Player(pygame.sprite.Sprite):
 		else:
 			self.direction.x = 0
 	def get_status(self):
-		#if player is not moving then we will add _idle to the status
+		# si le joueur bouge pas on va ajouter '_idle' au status
 		if self.direction.magnitude() == 0:
 			self.status = self.status.split('_')[0] + '_idle'
 	def move(self,dt):
 
-		# normalizing a vector
+		# normaliser un vecteur
 		if self.direction.magnitude() > 0:
 			self.direction = self.direction.normalize()
 
-		# horizontal movement
+		# mouvement horizontale
 		self.pos.x += self.direction.x * self.speed * dt
 		self.hitbox.centerx = round(self.pos.x)
 		self.rect.centerx = self.hitbox.centerx
 		self.collision('horizontal')
 
-		# vertical movement
+		# mouvement verticale
 		self.pos.y += self.direction.y * self.speed * dt
 		self.hitbox.centery = round(self.pos.y)
 		self.rect.centery = self.hitbox.centery

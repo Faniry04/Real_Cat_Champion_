@@ -11,9 +11,11 @@ class Level:
         self.display_surface = pygame.display.get_surface()
         self.all_sprites = CameraGroup()
         self.collision_sprites = pygame.sprite.Group()
-
         self.setup()
+        
     def setup(self):
+        #ajout des differents elements à partir du fichier tiled
+        
         tmx_data = load_pygame('import/data/final_map_.tmx')
 
         #fence
@@ -39,14 +41,13 @@ class Level:
                 surf = pygame.image.load("import/graphics/world/ground.png").convert_alpha(),
                 groups = self.all_sprites,
                 z = LAYERS['ground'])
-
-
     def run(self, dt):
         self.display_surface.fill('black')
         self.all_sprites.custom_draw(self.player)
         self.all_sprites.update(dt)
 
 class CameraGroup(pygame.sprite.Group):
+    #cette classe sert pour que la camera suit le joueur dans ses deplacements
     def __init__(self):
         super().__init__()
         self.display_surface = pygame.display.get_surface()
