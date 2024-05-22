@@ -43,6 +43,8 @@ class Game:
 
             while self.game_active == 2:
                 for event in pygame.event.get():
+                    if event.type == pygame.KEYDOWN and event.key == pygame.K_SPACE:
+                        self.game_active = 1
                     if event.type == pygame.QUIT:
                         pygame.quit()
                         sys.exit()
