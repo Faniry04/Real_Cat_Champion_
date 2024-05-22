@@ -11,5 +11,6 @@ LAYERS = {
 	'outside decorations': 3,
 	'fence' : 5,
 	'main': 6,
-	'building': 7
+	'building': 7,
+	'dialogue': 8
 }
