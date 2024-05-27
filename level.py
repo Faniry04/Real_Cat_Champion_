@@ -41,7 +41,6 @@ class Level:
                 surf=pygame.image.load("import/graphics/world/ground.png").convert_alpha(),
                 groups=self.all_sprites,
                 z=LAYERS['ground'])
-
     def doumbe_interaction(self, dt):
         keys = pygame.key.get_pressed()
 

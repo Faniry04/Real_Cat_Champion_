@@ -9,8 +9,10 @@ LAYERS = {
 	'ground': 1,
 	'forest grass':2,
 	'outside decorations': 3,
-	'fence' : 5,
+	'fence': 5,
 	'main': 6,
 	'building': 7,
-	'dialogue': 8
+	'dialogue' : 8,
+	'screen' : 9,
+	'combat_cat': 10
 }
