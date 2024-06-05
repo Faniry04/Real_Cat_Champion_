@@ -571,6 +571,26 @@ class Level:
                     if event2.type == pygame.KEYDOWN and event2.key == pygame.K_SPACE:
                         self.ko()
 
+    def ko(self):
+        self.background_gym.kill()
+        self.enemy_display.kill()
+        self.mc_display.kill()
+        self.enemy_health_display.kill()
+        self.mc_health_display.kill()
+        self.round_display.kill()
+        self.death_backround.kill()
+        self.tournament_index = 0
+        self.gym_index = 0
+        self.player_input = 0
+        self.enemy_input = 0
+        self.hospital_index = 0
+        self.first_enemy_index = 0
+        self.mc.money = self.mc.money + self.money_win
+        self.money_win = 0
+        self.player.pos.x = 950
+        self.player.pos.y = 1300
+        self.temp_mc_health = self.mc.health
+
     def shop_interaction(self, dt):
         self.font = pygame.font.Font('import/font/pixel2.ttf', 80)
         if self.shop_index == 1:
@@ -704,6 +724,8 @@ class Level:
         self.all_sprites.custom_draw(self.player)
         self.all_sprites.update(dt)
         self.doumbe_interaction(dt)
+        self.gym_interaction(dt)
+        self.shop_interaction(dt)
 
 
 
