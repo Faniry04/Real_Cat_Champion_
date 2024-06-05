@@ -18,5 +18,6 @@ LAYERS = {
 	'dialogue' : 8,
 	'screen' : 9,
 	'combat_cat': 10,
-	'text' : 11
+	'text' : 11,
+	'victory_screen': 12
 }
