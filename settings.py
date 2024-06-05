@@ -14,5 +14,6 @@ LAYERS = {
 	'building': 7,
 	'dialogue' : 8,
 	'screen' : 9,
-	'combat_cat': 10
+	'combat_cat': 10,
+	'text' : 11
 }

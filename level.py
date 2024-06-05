@@ -2,7 +2,9 @@ import pygame
 from settings import *
 from player import Player
 from sprites import *
+from random import *
 from pytmx.util_pygame import load_pygame
+
 
 
 class Level:
@@ -12,6 +14,20 @@ class Level:
         self.all_sprites = CameraGroup()
         self.collision_sprites = pygame.sprite.Group()
         self.increment_doumbe = 0
+        self.gym_index = 0
+        self.player_input = 0
+        self.enemy_input = 0
+        self.shop_index = 0
+        self.tournament_index = 0
+        self.temp_mc_health = 9999
+        self.hospital_index = 0
+        self.font1 = pygame.font.Font('import/font/pixel2.ttf', 50)
+        self.first_enemy_index = 0
+        self.money_win = 0
+        self.temp_cowboy_health = 0
+
+        self.mc = MainCharacter()
+
         self.setup()
 
     def setup(self):
@@ -123,4 +139,48 @@ class CameraGroup(pygame.sprite.Group):
                     offset_rect = sprite.rect.copy()
                     offset_rect.center -= self.offset
                     self.display_surface.blit(sprite.image, offset_rect)
+
+class MainCharacter():
+    def __init__(self):
+        super().__init__()
+        self.health = 5
+        self.damage = 1
+        self.money = 1000
+
+
+    def potion_de_vie(self):
+        if self.money >= 5:
+            self.money = self.money -5
+            self.health = self.health + 1
+
+    def potion_de_force(self):
+        if self.money >= 5:
+            self.money = self.money -5
+            self.damage = self.damage + 1
+
+    def pasteque(self):
+        if self.money >= 30:
+            self.money = self.money - 30
+            self.damage = self.damage +5
+            self.health = self.health +5
+
+    def fruit_du_diable(self):
+        self.fruit_index= randint(1, 5)
+        if self.money >= 70:
+            self.money = self.money - 70
+            if self.fruit_index == 1:
+                self.damage = int(self.damage * 2 )
+                self.health = int(self.health * 2)
+            if self.fruit_index == 2:
+                self.damage = self.damage + 10
+                self.health = self.health + 10
+            if self.fruit_index == 3:
+                self.damage = self.damage + 5
+                self.health = self.health + 50
+            if self.fruit_index == 4:
+                self.damage = int(self.damage /2)
+                self.health = int(self.health /2)
+            if self.fruit_index == 5:
+                self.damage = self.damage + 100
+                self.health = self.health +100
 
