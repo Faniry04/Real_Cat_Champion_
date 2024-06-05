@@ -1,8 +1,7 @@
 import pygame
-from setting import *
+from settings import *
 from player import Player
 from sprites import *
-from random import *
 from pytmx.util_pygame import load_pygame
 
 
@@ -13,13 +12,11 @@ class Level:
         self.all_sprites = CameraGroup()
         self.collision_sprites = pygame.sprite.Group()
         self.increment_doumbe = 0
-        self.gym_index = 0
-        self.player_input = 0
-        self.enemy_input = 0
-
         self.setup()
 
     def setup(self):
+        # ajout des differents elements à partir du fichier tiled
+
         tmx_data = load_pygame('import/data/final_map_.tmx')
 
         # fence
@@ -44,7 +41,6 @@ class Level:
                 surf=pygame.image.load("import/graphics/world/ground.png").convert_alpha(),
                 groups=self.all_sprites,
                 z=LAYERS['ground'])
-
     def doumbe_interaction(self, dt):
         keys = pygame.key.get_pressed()
 
@@ -103,209 +99,15 @@ class Level:
                         self.dialogue6.kill()
                         self.increment_doumbe = 0
 
-    def gym_interaction(self, dt):
-        if self.gym_index == 1:
-            self.player.pos.x = 1070
-            self.player.pos.y = 1940
-
-        if (1000 <= self.player.rect.centerx <= 1100) and (2000 >= self.player.rect.centery >= 1870):
-            for event2 in pygame.event.get():
-                if event2.type == pygame.KEYDOWN and event2.key == pygame.K_TAB:
-                    self.gym_index = 1
-                    self.player.pos.x = 1070
-                    self.player.pos.y = 1940
-
-                    self.background_gym = Generic(pos=(430, 1580),
-                                                  surf=pygame.image.load(
-                                                      "import/graphics/ecrans/ecran_combat11.png").convert_alpha(),
-                                                  groups=self.all_sprites,
-                                                  z=LAYERS['screen'])
-
-                    self.cowboy_display = Generic(pos=(830, 1480),
-                                                  surf=pygame.image.load(
-                                                      "import/graphics/combat_cats/cb_idle.png").convert_alpha(),
-                                                  groups=self.all_sprites,
-                                                  z=LAYERS['combat_cat'])
-
-                    self.mc_display = Generic(pos=(710, 1480),
-                                              surf=pygame.image.load(
-                                                  "import/graphics/combat_cats/mc_idle.png").convert_alpha(),
-                                              groups=self.all_sprites,
-                                              z=LAYERS['combat_cat'])
-
-                if event2.type == pygame.KEYDOWN and event2.key == pygame.K_SPACE:
-                    self.background_gym.kill()
-                    self.cowboy_display.kill()
-                    self.mc_display.kill()
-                    self.gym_index = 0
-                    self.player_input = 0
-                    self.enemy_input = 0
-
-                if event2.type == pygame.KEYDOWN and event2.key == pygame.K_1:
-                    self.player_input = 1
-                    self.enemy_input = randint(1, 3)
-
-                if event2.type == pygame.KEYDOWN and event2.key == pygame.K_2:
-                    self.player_input = 2
-                    self.enemy_input = randint(1, 3)
-
-                if event2.type == pygame.KEYDOWN and event2.key == pygame.K_3:
-                    self.player_input = 3
-                    self.enemy_input = randint(1, 3)
-
-                if self.player_input == 1 and self.enemy_input == 1:
-                    self.cowboy_display.kill()
-                    self.mc_display.kill()
-
-                    self.cowboy_display = Generic(pos=(830, 1480),
-                                                  surf=pygame.image.load(
-                                                      "import/graphics/combat_cats/cb_punch.png").convert_alpha(),
-                                                  groups=self.all_sprites,
-                                                  z=LAYERS['combat_cat'])
-
-                    self.mc_display = Generic(pos=(710, 1480),
-                                              surf=pygame.image.load(
-                                                  "import/graphics/combat_cats/mc_punch.png").convert_alpha(),
-                                              groups=self.all_sprites,
-                                              z=LAYERS['combat_cat'])
-
-                if self.player_input == 1 and self.enemy_input == 2:
-                    self.cowboy_display.kill()
-                    self.mc_display.kill()
-
-                    self.mc_display = Generic(pos=(740, 1480),
-                                              surf=pygame.image.load(
-                                                  "import/graphics/combat_cats/mc_punch.png").convert_alpha(),
-                                              groups=self.all_sprites,
-                                              z=LAYERS['combat_cat'])
-
-                    self.cowboy_display = Generic(pos=(860, 1480),
-                                                  surf=pygame.image.load(
-                                                      "import/graphics/combat_cats/cb_kick.png").convert_alpha(),
-                                                  groups=self.all_sprites,
-                                                  z=LAYERS['combat_cat'])
-
-                if self.player_input == 1 and self.enemy_input == 3:
-                    self.cowboy_display.kill()
-                    self.mc_display.kill()
-
-                    self.mc_display = Generic(pos=(710, 1480),
-                                              surf=pygame.image.load(
-                                                  "import/graphics/combat_cats/mc_punch.png").convert_alpha(),
-                                              groups=self.all_sprites,
-                                              z=LAYERS['combat_cat'])
-
-                    self.cowboy_display = Generic(pos=(870, 1480),
-                                                  surf=pygame.image.load(
-                                                      "import/graphics/combat_cats/cb_protection.png").convert_alpha(),
-                                                  groups=self.all_sprites,
-                                                  z=LAYERS['combat_cat'])
-
-                if self.player_input == 2 and self.enemy_input == 1:
-                    self.cowboy_display.kill()
-                    self.mc_display.kill()
-
-                    self.mc_display = Generic(pos=(740, 1480),
-                                              surf=pygame.image.load(
-                                                  "import/graphics/combat_cats/mc_kick.png").convert_alpha(),
-                                              groups=self.all_sprites,
-                                              z=LAYERS['combat_cat'])
-
-                    self.cowboy_display = Generic(pos=(860, 1480),
-                                                  surf=pygame.image.load(
-                                                      "import/graphics/combat_cats/cb_punch.png").convert_alpha(),
-                                                  groups=self.all_sprites,
-                                                  z=LAYERS['combat_cat'])
-
-                if self.player_input == 2 and self.enemy_input == 2:
-                    self.cowboy_display.kill()
-                    self.mc_display.kill()
-
-                    self.mc_display = Generic(pos=(740, 1480),
-                                              surf=pygame.image.load(
-                                                  "import/graphics/combat_cats/mc_kick.png").convert_alpha(),
-                                              groups=self.all_sprites,
-                                              z=LAYERS['combat_cat'])
-
-                    self.cowboy_display = Generic(pos=(860, 1480),
-                                                  surf=pygame.image.load(
-                                                      "import/graphics/combat_cats/cb_punch.png").convert_alpha(),
-                                                  groups=self.all_sprites,
-                                                  z=LAYERS['combat_cat'])
-
-                if self.player_input == 2 and self.enemy_input == 3:
-                    self.cowboy_display.kill()
-                    self.mc_display.kill()
-
-                    self.cowboy_display = Generic(pos=(880, 1480),
-                                                  surf=pygame.image.load(
-                                                      "import/graphics/combat_cats/cb_protection.png").convert_alpha(),
-                                                  groups=self.all_sprites,
-                                                  z=LAYERS['combat_cat'])
-
-                    self.mc_display = Generic(pos=(740, 1480),
-                                              surf=pygame.image.load(
-                                                  "import/graphics/combat_cats/mc_kick.png").convert_alpha(),
-                                              groups=self.all_sprites,
-                                              z=LAYERS['combat_cat'])
-
-                if self.player_input == 3 and self.enemy_input == 1:
-                    self.cowboy_display.kill()
-                    self.mc_display.kill()
-
-                    self.cowboy_display = Generic(pos=(830, 1480),
-                                                  surf=pygame.image.load(
-                                                      "import/graphics/combat_cats/cb_punch.png").convert_alpha(),
-                                                  groups=self.all_sprites,
-                                                  z=LAYERS['combat_cat'])
-
-                    self.mc_display = Generic(pos=(690, 1480),
-                                              surf=pygame.image.load(
-                                                  "import/graphics/combat_cats/mc_protection.png").convert_alpha(),
-                                              groups=self.all_sprites,
-                                              z=LAYERS['combat_cat'])
-
-                if self.player_input == 3 and self.enemy_input == 2:
-                    self.cowboy_display.kill()
-                    self.mc_display.kill()
-
-                    self.cowboy_display = Generic(pos=(870, 1480),
-                                                  surf=pygame.image.load(
-                                                      "import/graphics/combat_cats/cb_protection.png").convert_alpha(),
-                                                  groups=self.all_sprites,
-                                                  z=LAYERS['combat_cat'])
-
-                    self.mc_display = Generic(pos=(680, 1480),
-                                              surf=pygame.image.load(
-                                                  "import/graphics/combat_cats/mc_protection.png").convert_alpha(),
-                                              groups=self.all_sprites,
-                                              z=LAYERS['combat_cat'])
-
-                if self.player_input == 3 and self.enemy_input == 3:
-                    self.cowboy_display.kill()
-                    self.mc_display.kill()
-
-                    self.mc_display = Generic(pos=(740, 1480),
-                                              surf=pygame.image.load(
-                                                  "import/graphics/combat_cats/mc_protection.png").convert_alpha(),
-                                              groups=self.all_sprites,
-                                              z=LAYERS['combat_cat'])
-
-                    self.cowboy_display = Generic(pos=(830, 1480),
-                                                  surf=pygame.image.load(
-                                                      "import/graphics/combat_cats/cb_kick.png").convert_alpha(),
-                                                  groups=self.all_sprites,
-                                                  z=LAYERS['combat_cat'])
-
     def run(self, dt):
         self.display_surface.fill('black')
         self.all_sprites.custom_draw(self.player)
         self.all_sprites.update(dt)
         self.doumbe_interaction(dt)
-        self.gym_interaction(dt)
 
 
 class CameraGroup(pygame.sprite.Group):
+    # cette classe sert pour que la camera suit le joueur dans ses deplacements
     def __init__(self):
         super().__init__()
         self.display_surface = pygame.display.get_surface()
@@ -321,46 +123,4 @@ class CameraGroup(pygame.sprite.Group):
                     offset_rect = sprite.rect.copy()
                     offset_rect.center -= self.offset
                     self.display_surface.blit(sprite.image, offset_rect)
-
-
-class Combat():
-    def __init__(self, health, damage):
-        super().__init__()
-        self.health = health
-        self.damage = damage
-
-    def potion_health(self):
-        self.health = self.health + 1
-
-    def potion_strenght(self):
-        self.damage = self.damage + 1
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
