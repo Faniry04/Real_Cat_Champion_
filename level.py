@@ -1,5 +1,5 @@
 import pygame
-from setting import *
+from settings import *
 from player import Player
 from sprites import *
 from random import *
