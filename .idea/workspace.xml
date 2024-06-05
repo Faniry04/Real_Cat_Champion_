@@ -1,0 +1,385 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="7c10046c-ba04-414c-8ea5-9ea2b6205152" name="Changes" comment="Modification de certaines variables dans level.py" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Merge.Settings">
+    <option name="BRANCH" value="origin/main" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Anas1010101&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Faniry04/Real_Cat_Champion_.git&quot;,
+    &quot;accountId&quot;: &quot;6e15a9e9-ac76-404a-aee8-2451c94d419b&quot;
+  }
+}</component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/level.py" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/player.py" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/sprites.py" root0="SKIP_INSPECTION" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 2
+}</component>
+  <component name="ProjectId" id="2fp3u08V2qbSZvwEQURGWRXrSDD" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="autoscrollToSource" value="true" />
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "Python.level.executor": "Run",
+    "Python.main.executor": "Run",
+    "Python.player.executor": "Run",
+    "Python.settings.executor": "Run",
+    "last_opened_file_path": "C:/Users/ilmae/PycharmProjects/Real_Cat_Champion_"
+  }
+}]]></component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-python-sdk-0509580d9d50-746f403e7f0c-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-241.14494.241" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="7c10046c-ba04-414c-8ea5-9ea2b6205152" name="Changes" comment="" />
+      <created>1714484411068</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1714484411068</updated>
+    </task>
+    <task id="LOCAL-00001" summary="Initalisation du fichier setting avec le variables globales">
+      <option name="closed" value="true" />
+      <created>1714484553280</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1714484553280</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Initalisation du fichier setting avec le variables globales">
+      <option name="closed" value="true" />
+      <created>1714484648220</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1714484648220</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Codage de l affichage de l' écran avec variable temporaire">
+      <option name="closed" value="true" />
+      <created>1714485845233</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1714485845233</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Creation des classes WildFlower et Tree avec leur initialisation">
+      <option name="closed" value="true" />
+      <created>1714486150044</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1714486150044</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Creation du fichier level.py">
+      <option name="closed" value="true" />
+      <created>1714486232512</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1714486232512</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Initialisation de la classe CameraGroup et importation des libraries">
+      <option name="closed" value="true" />
+      <created>1714486379713</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1714486379713</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Creation et initialisation de la classe Level">
+      <option name="closed" value="true" />
+      <created>1714486819868</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1714486819868</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Importation des assets et des sprites pour le projet">
+      <option name="closed" value="true" />
+      <created>1714488226978</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1714488226978</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Importation des assets et des sprites pour le projet">
+      <option name="closed" value="true" />
+      <created>1714488787401</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1714488787401</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Creation d'un fichier texte Read Me">
+      <option name="closed" value="true" />
+      <created>1714488874292</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1714488874292</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Creation et initialisation de la classe Player dans le fichier player.py">
+      <option name="closed" value="true" />
+      <created>1715070692262</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1715070692262</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Creation d'un systeme de mouvement avec les touches du clavier">
+      <option name="closed" value="true" />
+      <created>1715071078116</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1715071078116</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Creation d'un systeme d'animation du player">
+      <option name="closed" value="true" />
+      <created>1715071448042</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1715071448042</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Creation d'un systeme de collision pour le player">
+      <option name="closed" value="true" />
+      <created>1715071716696</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1715071716696</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Creation de l'attribut player dans level.py">
+      <option name="closed" value="true" />
+      <created>1715072349285</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1715072349285</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Importation du Player à partir du fichier player.py">
+      <option name="closed" value="true" />
+      <created>1715072431486</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1715072431486</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Ajout de l'attribut level dans le main.py">
+      <option name="closed" value="true" />
+      <created>1715072643680</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1715072643680</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Finalisation de la methode run()">
+      <option name="closed" value="true" />
+      <created>1715072914036</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1715072914036</updated>
+    </task>
+    <task id="LOCAL-00019" summary="Ajout de self.setup() dans level.py">
+      <option name="closed" value="true" />
+      <created>1715073027377</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1715073027377</updated>
+    </task>
+    <task id="LOCAL-00020" summary="Modification des methodes du main">
+      <option name="closed" value="true" />
+      <created>1715073701923</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1715073701923</updated>
+    </task>
+    <task id="LOCAL-00021" summary="Reorganisation du code pour qu'il soit bien lisible">
+      <option name="closed" value="true" />
+      <created>1715073803200</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1715073803200</updated>
+    </task>
+    <task id="LOCAL-00022" summary="Ajout des fichiers pour l'écran du début du jeu">
+      <option name="closed" value="true" />
+      <created>1715087445285</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1715087445285</updated>
+    </task>
+    <task id="LOCAL-00023" summary="Changement de la vitesse du player">
+      <option name="closed" value="true" />
+      <created>1715106900479</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1715106900479</updated>
+    </task>
+    <task id="LOCAL-00024" summary="Ajout d'un fichier image dans le main">
+      <option name="closed" value="true" />
+      <created>1715868432166</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1715868432167</updated>
+    </task>
+    <task id="LOCAL-00025" summary="Ajout d'un écran de mort dans le main et ajout de certains commentaires">
+      <option name="closed" value="true" />
+      <created>1715951667493</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1715951667493</updated>
+    </task>
+    <task id="LOCAL-00026" summary="Ajout d'une nouvelle classe Dialogue dans sprite.py">
+      <option name="closed" value="true" />
+      <created>1716386039400</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1716386039400</updated>
+    </task>
+    <task id="LOCAL-00027" summary="Ajout des fichiers images pour les dialogue de Cedric Doumbe">
+      <option name="closed" value="true" />
+      <created>1716386440340</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1716386440340</updated>
+    </task>
+    <task id="LOCAL-00028" summary="Ajout d'une variable 'dialogue' dans le dictionaire LAYERS (settings.py)">
+      <option name="closed" value="true" />
+      <created>1716386514979</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1716386514979</updated>
+    </task>
+    <task id="LOCAL-00029" summary="Ajout de certains valeurs dans le dictionnaire LAYERS (settings.py)">
+      <option name="closed" value="true" />
+      <created>1716810397581</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1716810397581</updated>
+    </task>
+    <task id="LOCAL-00030" summary="Ajout de certaines valeurs dans le dictionnaire LAYERS (settings.py)">
+      <option name="closed" value="true" />
+      <created>1717590474241</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1717590474241</updated>
+    </task>
+    <task id="LOCAL-00031" summary="Modification du systeme de combat avec la methode gym_interaction (level.py)">
+      <option name="closed" value="true" />
+      <created>1717591103483</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1717591103483</updated>
+    </task>
+    <task id="LOCAL-00032" summary="Ajout d'un systeme de defaite avec la methode ko">
+      <option name="closed" value="true" />
+      <created>1717591432612</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1717591432612</updated>
+    </task>
+    <task id="LOCAL-00033" summary="Modification de certaines variables dans level.py">
+      <option name="closed" value="true" />
+      <created>1717591700665</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1717591700665</updated>
+    </task>
+    <task id="LOCAL-00034" summary="Modification de certaines variables dans level.py">
+      <option name="closed" value="true" />
+      <created>1717591828859</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1717591828859</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
+    <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="Importation des assets et des sprites pour le projet" />
+    <MESSAGE value="Creation d'un fichier texte Read Me" />
+    <MESSAGE value="Creation et initialisation de la classe Player dans le fichier player.py" />
+    <MESSAGE value="Creation d'un systeme de mouvement avec les touches du clavier" />
+    <MESSAGE value="Creation d'un systeme d'animation du player" />
+    <MESSAGE value="Creation d'un systeme de collision pour le player" />
+    <MESSAGE value="Creation de l'attribut player dans level.py" />
+    <MESSAGE value="Importation du Player à partir du fichier player.py" />
+    <MESSAGE value="Ajout de l'attribut level dans le main.py" />
+    <MESSAGE value="Finalisation de la methode run()" />
+    <MESSAGE value="Ajout de self.setup() dans level.py" />
+    <MESSAGE value="Modification des methodes du main" />
+    <MESSAGE value="Reorganisation du code pour qu'il soit bien lisible" />
+    <MESSAGE value="Ajout des fichiers pour l'écran du début du jeu" />
+    <MESSAGE value="Changement de la vitesse du player" />
+    <MESSAGE value="Ajout d'un fichier image dans le main" />
+    <MESSAGE value="Ajout d'un écran de mort dans le main et ajout de certains commentaires" />
+    <MESSAGE value="Ajout d'une nouvelle classe Dialogue dans sprite.py" />
+    <MESSAGE value="Ajout des fichiers images pour les dialogue de Cedric Doumbe" />
+    <MESSAGE value="Ajout d'une variable 'dialogue' dans le dictionaire LAYERS (settings.py)" />
+    <MESSAGE value="Ajout de certains valeurs dans le dictionnaire LAYERS (settings.py)" />
+    <MESSAGE value="Ajout de certaines valeurs dans le dictionnaire LAYERS (settings.py)" />
+    <MESSAGE value="Modification du systeme de combat avec la methode gym_interaction (level.py)" />
+    <MESSAGE value="Ajout d'un systeme de defaite avec la methode ko" />
+    <MESSAGE value="Modification de certaines variables dans level.py" />
+    <option name="LAST_COMMIT_MESSAGE" value="Modification de certaines variables dans level.py" />
+  </component>
+</project>
