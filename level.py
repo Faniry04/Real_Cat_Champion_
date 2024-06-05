@@ -571,6 +571,134 @@ class Level:
                     if event2.type == pygame.KEYDOWN and event2.key == pygame.K_SPACE:
                         self.ko()
 
+    def shop_interaction(self, dt):
+        self.font = pygame.font.Font('import/font/pixel2.ttf', 80)
+        if self.shop_index == 1:
+            self.player.pos.x = 1500
+            self.player.pos.y = 1300
+
+        if (1450 <= self.player.rect.centerx <= 1550) and (1320 >= self.player.rect.centery >= 1110):
+            for event2 in pygame.event.get():
+                if event2.type == pygame.KEYDOWN and event2.key == pygame.K_TAB:
+                    if self.shop_index != 1:
+                        self.background_shop = Generic(pos=(860, 940),
+                                                       surf=pygame.image.load(
+                                                           "import/graphics/ecrans/ecran_shop.png").convert_alpha(),
+                                                       groups=self.all_sprites,
+                                                       z=LAYERS['screen'])
+                        self.health_display = Generic(pos=(1318, 1457),
+                                                      surf=self.font.render(str(self.mc.health), False,
+                                                                            (255, 255, 255)),
+                                                      groups=self.all_sprites,
+                                                      z=LAYERS['text'])
+
+                        self.damage_display = Generic(pos=(1740, 1457),
+                                                      surf=self.font.render(str(self.mc.damage), False,
+                                                                            (255, 255, 255)),
+                                                      groups=self.all_sprites,
+                                                      z=LAYERS['text'])
+
+                        self.money_display = Generic(pos=(1640, 1550),
+                                                     surf=self.font.render(str(self.mc.money) + ' $', False,
+                                                                           (255, 255, 255)),
+                                                     groups=self.all_sprites,
+                                                     z=LAYERS['text'])
+                    self.shop_index = 1
+                    self.player.pos.x = 1500
+                    self.player.pos.y = 1300
+
+                if event2.type == pygame.KEYDOWN and event2.key == pygame.K_ESCAPE:
+                    self.background_shop.kill()
+                    self.damage_display.kill()
+                    self.health_display.kill()
+                    self.money_display.kill()
+                    self.shop_index = 0
+
+                if event2.type == pygame.KEYDOWN and event2.key == pygame.K_1:
+                    self.damage_display.kill()
+                    self.health_display.kill()
+                    self.money_display.kill()
+
+                    self.mc.potion_de_vie()
+                    self.health_display = Generic(pos=(1318, 1457),
+                                                  surf=self.font.render(str(self.mc.health), False, (255, 255, 255)),
+                                                  groups=self.all_sprites,
+                                                  z=LAYERS['text'])
+
+                    self.damage_display = Generic(pos=(1740, 1457),
+                                                  surf=self.font.render(str(self.mc.damage), False, (255, 255, 255)),
+                                                  groups=self.all_sprites,
+                                                  z=LAYERS['text'])
+
+                    self.money_display = Generic(pos=(1640, 1550),
+                                                 surf=self.font.render(str(self.mc.money) + ' $', False,
+                                                                       (255, 255, 255)),
+                                                 groups=self.all_sprites,
+                                                 z=LAYERS['text'])
+
+                if event2.type == pygame.KEYDOWN and event2.key == pygame.K_2:
+                    self.damage_display.kill()
+                    self.health_display.kill()
+                    self.money_display.kill()
+                    self.mc.potion_de_force()
+                    self.health_display = Generic(pos=(1318, 1457),
+                                                  surf=self.font.render(str(self.mc.health), False, (255, 255, 255)),
+                                                  groups=self.all_sprites,
+                                                  z=LAYERS['text'])
+
+                    self.damage_display = Generic(pos=(1740, 1457),
+                                                  surf=self.font.render(str(self.mc.damage), False, (255, 255, 255)),
+                                                  groups=self.all_sprites,
+                                                  z=LAYERS['text'])
+
+                    self.money_display = Generic(pos=(1640, 1550),
+                                                 surf=self.font.render(str(self.mc.money) + ' $', False,
+                                                                       (255, 255, 255)),
+                                                 groups=self.all_sprites,
+                                                 z=LAYERS['text'])
+
+                if event2.type == pygame.KEYDOWN and event2.key == pygame.K_3:
+                    self.damage_display.kill()
+                    self.health_display.kill()
+                    self.money_display.kill()
+                    self.mc.pasteque()
+                    self.health_display = Generic(pos=(1318, 1457),
+                                                  surf=self.font.render(str(self.mc.health), False, (255, 255, 255)),
+                                                  groups=self.all_sprites,
+                                                  z=LAYERS['text'])
+
+                    self.damage_display = Generic(pos=(1740, 1457),
+                                                  surf=self.font.render(str(self.mc.damage), False, (255, 255, 255)),
+                                                  groups=self.all_sprites,
+                                                  z=LAYERS['text'])
+
+                    self.money_display = Generic(pos=(1640, 1550),
+                                                 surf=self.font.render(str(self.mc.money) + ' $', False,
+                                                                       (255, 255, 255)),
+                                                 groups=self.all_sprites,
+                                                 z=LAYERS['text'])
+
+                if event2.type == pygame.KEYDOWN and event2.key == pygame.K_4:
+                    self.damage_display.kill()
+                    self.health_display.kill()
+                    self.money_display.kill()
+                    self.mc.fruit_du_diable()
+                    self.health_display = Generic(pos=(1318, 1457),
+                                                  surf=self.font.render(str(self.mc.health), False, (255, 255, 255)),
+                                                  groups=self.all_sprites,
+                                                  z=LAYERS['text'])
+
+                    self.damage_display = Generic(pos=(1740, 1457),
+                                                  surf=self.font.render(str(self.mc.damage), False, (255, 255, 255)),
+                                                  groups=self.all_sprites,
+                                                  z=LAYERS['text'])
+
+                    self.money_display = Generic(pos=(1640, 1550),
+                                                 surf=self.font.render(str(self.mc.money) + ' $', False,
+                                                                       (255, 255, 255)),
+                                                 groups=self.all_sprites,
+                                                 z=LAYERS['text'])
+
     def run(self, dt):
         self.display_surface.fill('black')
         self.all_sprites.custom_draw(self.player)
