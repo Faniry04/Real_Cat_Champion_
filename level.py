@@ -99,11 +99,487 @@ class Level:
                         self.dialogue6.kill()
                         self.increment_doumbe = 0
 
+    def gym_interaction(self, dt):
+
+        if self.gym_index == 1:
+            self.player.pos.x = 1070
+            self.player.pos.y = 1940
+
+        if (1000 <= self.player.rect.centerx <= 1100) and (2000 >= self.player.rect.centery >= 1870):
+            for event2 in pygame.event.get():
+                if event2.type == pygame.KEYDOWN and event2.key == pygame.K_TAB:
+                    if self.gym_index != 1:
+                        # initialisation des PV de tous les personnages (ennemies et mc)
+                        self.temp_mc_health = self.mc.health
+                        self.temp_trainingdummy_health = 10
+                        self.temp_cowboy_health = 7
+                        self.tournament_index = 1
+
+                        self.round_display = Generic(pos=(825, 2120),
+                                                     surf=self.font1.render(
+                                                         'ROUND 1', False, (244, 222, 7)),
+                                                     groups=self.all_sprites,
+                                                     z=LAYERS['text'])
+                        self.background_gym = Generic(pos=(430, 1580),
+                                                      surf=pygame.image.load(
+                                                          "import/graphics/ecrans/ecran_combat11.png").convert_alpha(),
+                                                      groups=self.all_sprites,
+                                                      z=LAYERS['screen'])
+
+                        self.enemy_display = Generic(pos=(830, 1480),
+                                                     surf=pygame.image.load(
+                                                         "import/graphics/combat_cats/training_dummy.png").convert_alpha(),
+                                                     groups=self.all_sprites,
+                                                     z=LAYERS['combat_cat'])
+
+                        self.mc_display = Generic(pos=(710, 1480),
+                                                  surf=pygame.image.load(
+                                                      "import/graphics/combat_cats/mc_idle.png").convert_alpha(),
+                                                  groups=self.all_sprites,
+                                                  z=LAYERS['combat_cat'])
+                        self.mc_health_display = Generic(pos=(825, 2180),
+                                                         surf=self.font1.render(
+                                                             'TES PV:' + str(self.temp_mc_health) + '/' + str(
+                                                                 self.mc.health), False, (255, 255, 255)),
+                                                         groups=self.all_sprites,
+                                                         z=LAYERS['text'])
+                        self.enemy_health_display = Generic(pos=(1250, 2180),
+                                                            surf=self.font1.render('PV ENNEMIS:', False,
+                                                                                   (255, 255, 255)),
+                                                            groups=self.all_sprites,
+                                                            z=LAYERS['text'])
+
+                    self.gym_index = 1
+                    self.player.pos.x = 1070
+                    self.player.pos.y = 1940
+
+                if self.tournament_index == 1:  # first enemy : training dummy
+
+                    if event2.type == pygame.KEYDOWN and event2.key == pygame.K_1:
+                        self.enemy_health_display.kill()
+                        self.mc_health_display.kill()
+                        self.mc_display.kill()
+                        self.enemy_display.kill()
+
+                        self.enemy_display = Generic(pos=(830, 1480),
+                                                     surf=pygame.image.load(
+                                                         "import/graphics/combat_cats/training_dummy.png").convert_alpha(),
+                                                     groups=self.all_sprites,
+                                                     z=LAYERS['combat_cat'])
+                        self.mc_display = Generic(pos=(710, 1480),
+                                                  surf=pygame.image.load(
+                                                      "import/graphics/combat_cats/mc_punch.png").convert_alpha(),
+                                                  groups=self.all_sprites,
+                                                  z=LAYERS['combat_cat'])
+
+                        self.temp_trainingdummy_health = self.temp_trainingdummy_health - self.mc.damage
+
+                        self.mc_health_display = Generic(pos=(825, 2180),
+                                                         surf=self.font1.render(
+                                                             'TES PV:' + str(self.temp_mc_health) + '/' + str(
+                                                                 self.mc.health), False, (255, 255, 255)),
+                                                         groups=self.all_sprites,
+                                                         z=LAYERS['text'])
+                        self.enemy_health_display = Generic(pos=(1250, 2180),
+                                                            surf=self.font1.render('PV ENNEMIS:' + str(
+                                                                self.temp_trainingdummy_health) + '/10', False,
+                                                                                   (255, 255, 255)),
+                                                            groups=self.all_sprites,
+                                                            z=LAYERS['text'])
+
+                    if event2.type == pygame.KEYDOWN and event2.key == pygame.K_2:
+                        self.enemy_health_display.kill()
+                        self.mc_health_display.kill()
+                        self.mc_display.kill()
+                        self.enemy_display.kill()
+                        self.enemy_display = Generic(pos=(830, 1480),
+                                                     surf=pygame.image.load(
+                                                         "import/graphics/combat_cats/training_dummy.png").convert_alpha(),
+                                                     groups=self.all_sprites,
+                                                     z=LAYERS['combat_cat'])
+                        self.mc_display = Generic(pos=(740, 1480),
+                                                  surf=pygame.image.load(
+                                                      "import/graphics/combat_cats/mc_kick.png").convert_alpha(),
+                                                  groups=self.all_sprites,
+                                                  z=LAYERS['combat_cat'])
+                        self.temp_trainingdummy_health = self.temp_trainingdummy_health - self.mc.damage
+                        self.mc_health_display = Generic(pos=(825, 2180),
+                                                         surf=self.font1.render(
+                                                             'TES PV:' + str(self.temp_mc_health) + '/' + str(
+                                                                 self.mc.health), False, (255, 255, 255)),
+                                                         groups=self.all_sprites,
+                                                         z=LAYERS['text'])
+                        self.enemy_health_display = Generic(pos=(1250, 2180),
+                                                            surf=self.font1.render('PV ENNEMIS:' + str(
+                                                                self.temp_trainingdummy_health) + '/10', False,
+                                                                                   (255, 255, 255)),
+                                                            groups=self.all_sprites,
+                                                            z=LAYERS['text'])
+
+                    if event2.type == pygame.KEYDOWN and event2.key == pygame.K_3:
+                        self.enemy_health_display.kill()
+                        self.mc_health_display.kill()
+                        self.mc_display.kill()
+                        self.enemy_display.kill()
+                        self.enemy_display = Generic(pos=(830, 1480),
+                                                     surf=pygame.image.load(
+                                                         "import/graphics/combat_cats/training_dummy.png").convert_alpha(),
+                                                     groups=self.all_sprites,
+                                                     z=LAYERS['combat_cat'])
+                        self.mc_display = Generic(pos=(690, 1480),
+                                                  surf=pygame.image.load(
+                                                      "import/graphics/combat_cats/mc_protection.png").convert_alpha(),
+                                                  groups=self.all_sprites,
+                                                  z=LAYERS['combat_cat'])
+                        self.mc_health_display = Generic(pos=(825, 2180),
+                                                         surf=self.font1.render(
+                                                             'TES PV:' + str(self.temp_mc_health) + '/' + str(
+                                                                 self.mc.health), False, (255, 255, 255)),
+                                                         groups=self.all_sprites,
+                                                         z=LAYERS['text'])
+                        self.enemy_health_display = Generic(pos=(1250, 2180),
+                                                            surf=self.font1.render('PV ENNEMIS:' + str(
+                                                                self.temp_trainingdummy_health) + '/10', False,
+                                                                                   (255, 255, 255)),
+                                                            groups=self.all_sprites,
+                                                            z=LAYERS['text'])
+
+                    if self.temp_trainingdummy_health <= 0:
+                        self.temp_mc_health = self.mc.health
+                        self.enemy_health_display.kill()
+                        self.mc_display.kill()
+                        self.enemy_display.kill()
+                        self.mc_health_display.kill()
+                        self.enemy_input = 0
+                        self.player_input = 0
+                        self.round_display.kill()
+                        self.tournament_index = 2
+                        self.money_win = 1
+
+                if self.tournament_index == 2 and self.first_enemy_index == 1:  # second enemy : cowboy
+
+                    if event2.type == pygame.KEYDOWN and event2.key == pygame.K_SPACE:
+                        self.background_gym.kill()
+                        self.enemy_display.kill()
+                        self.mc_display.kill()
+                        self.gym_index = 0
+                        self.player_input = 0
+                        self.enemy_input = 0
+
+                    if event2.type == pygame.KEYDOWN and event2.key == pygame.K_1:
+                        self.enemy_input = randint(1, 3)
+                        if self.enemy_input == 1:
+                            self.enemy_display.kill()
+                            self.mc_display.kill()
+
+                            self.enemy_display = Generic(pos=(830, 1480),
+                                                         surf=pygame.image.load(
+                                                             "import/graphics/combat_cats/cb_punch.png").convert_alpha(),
+                                                         groups=self.all_sprites,
+                                                         z=LAYERS['combat_cat'])
+
+                            self.mc_display = Generic(pos=(710, 1480),
+                                                      surf=pygame.image.load(
+                                                          "import/graphics/combat_cats/mc_punch.png").convert_alpha(),
+                                                      groups=self.all_sprites,
+                                                      z=LAYERS['combat_cat'])
+                        if self.enemy_input == 2:
+                            self.enemy_display.kill()
+                            self.mc_display.kill()
+
+                            self.mc_display = Generic(pos=(740, 1480),
+                                                      surf=pygame.image.load(
+                                                          "import/graphics/combat_cats/mc_punch.png").convert_alpha(),
+                                                      groups=self.all_sprites,
+                                                      z=LAYERS['combat_cat'])
+
+                            self.enemy_display = Generic(pos=(860, 1480),
+                                                         surf=pygame.image.load(
+                                                             "import/graphics/combat_cats/cb_kick.png").convert_alpha(),
+                                                         groups=self.all_sprites,
+                                                         z=LAYERS['combat_cat'])
+                            self.temp_cowboy_health = self.temp_cowboy_health - self.mc.damage
+                            self.mc_health_display.kill()
+                            self.enemy_health_display.kill()
+                            self.mc_health_display = Generic(pos=(825, 2180),
+                                                             surf=self.font1.render(
+                                                                 'TES PV:' + str(self.temp_mc_health) + '/' + str(
+                                                                     self.mc.health), False, (255, 255, 255)),
+                                                             groups=self.all_sprites,
+                                                             z=LAYERS['text'])
+                            self.enemy_health_display = Generic(pos=(1250, 2180),
+                                                                surf=self.font1.render('PV ENNEMIS:' + str(
+                                                                    self.temp_cowboy_health) + '/7', False,
+                                                                                       (255, 255, 255)),
+                                                                groups=self.all_sprites,
+                                                                z=LAYERS['text'])
+                        if self.enemy_input == 3:
+                            self.enemy_display.kill()
+                            self.mc_display.kill()
+
+                            self.mc_display = Generic(pos=(710, 1480),
+                                                      surf=pygame.image.load(
+                                                          "import/graphics/combat_cats/mc_punch.png").convert_alpha(),
+                                                      groups=self.all_sprites,
+                                                      z=LAYERS['combat_cat'])
+
+                            self.enemy_display = Generic(pos=(870, 1480),
+                                                         surf=pygame.image.load(
+                                                             "import/graphics/combat_cats/cb_protection.png").convert_alpha(),
+                                                         groups=self.all_sprites,
+                                                         z=LAYERS['combat_cat'])
+                            self.temp_mc_health = self.temp_mc_health - 1
+                            self.mc_health_display.kill()
+                            self.enemy_health_display.kill()
+                            self.mc_health_display = Generic(pos=(825, 2180),
+                                                             surf=self.font1.render(
+                                                                 'TES PV:' + str(self.temp_mc_health) + '/' + str(
+                                                                     self.mc.health), False, (255, 255, 255)),
+                                                             groups=self.all_sprites,
+                                                             z=LAYERS['text'])
+                            self.enemy_health_display = Generic(pos=(1250, 2180),
+                                                                surf=self.font1.render('PV ENNEMIS:' + str(
+                                                                    self.temp_cowboy_health) + '/7', False,
+                                                                                       (255, 255, 255)),
+                                                                groups=self.all_sprites,
+                                                                z=LAYERS['text'])
+
+                    if event2.type == pygame.KEYDOWN and event2.key == pygame.K_2:
+                        self.enemy_input = randint(1, 3)
+                        if self.enemy_input == 1:
+                            self.enemy_display.kill()
+                            self.mc_display.kill()
+
+                            self.mc_display = Generic(pos=(740, 1480),
+                                                      surf=pygame.image.load(
+                                                          "import/graphics/combat_cats/mc_kick.png").convert_alpha(),
+                                                      groups=self.all_sprites,
+                                                      z=LAYERS['combat_cat'])
+
+                            self.enemy_display = Generic(pos=(860, 1480),
+                                                         surf=pygame.image.load(
+                                                             "import/graphics/combat_cats/cb_punch.png").convert_alpha(),
+                                                         groups=self.all_sprites,
+                                                         z=LAYERS['combat_cat'])
+                            self.temp_mc_health = self.temp_mc_health - 1
+                            self.mc_health_display.kill()
+                            self.enemy_health_display.kill()
+                            self.mc_health_display = Generic(pos=(825, 2180),
+                                                             surf=self.font1.render(
+                                                                 'TES PV:' + str(self.temp_mc_health) + '/' + str(
+                                                                     self.mc.health), False, (255, 255, 255)),
+                                                             groups=self.all_sprites,
+                                                             z=LAYERS['text'])
+                            self.enemy_health_display = Generic(pos=(1250, 2180),
+                                                                surf=self.font1.render('PV ENNEMIS:' + str(
+                                                                    self.temp_cowboy_health) + '/7', False,
+                                                                                       (255, 255, 255)),
+                                                                groups=self.all_sprites,
+                                                                z=LAYERS['text'])
+                        if self.enemy_input == 2:
+                            self.enemy_display.kill()
+                            self.mc_display.kill()
+
+                            self.mc_display = Generic(pos=(740, 1480),
+                                                      surf=pygame.image.load(
+                                                          "import/graphics/combat_cats/mc_kick.png").convert_alpha(),
+                                                      groups=self.all_sprites,
+                                                      z=LAYERS['combat_cat'])
+
+                            self.enemy_display = Generic(pos=(860, 1480),
+                                                         surf=pygame.image.load(
+                                                             "import/graphics/combat_cats/cb_kick.png").convert_alpha(),
+                                                         groups=self.all_sprites,
+                                                         z=LAYERS['combat_cat'])
+                        if self.enemy_input == 3:
+                            self.enemy_display.kill()
+                            self.mc_display.kill()
+
+                            self.enemy_display = Generic(pos=(880, 1480),
+                                                         surf=pygame.image.load(
+                                                             "import/graphics/combat_cats/cb_protection.png").convert_alpha(),
+                                                         groups=self.all_sprites,
+                                                         z=LAYERS['combat_cat'])
+
+                            self.mc_display = Generic(pos=(740, 1480),
+                                                      surf=pygame.image.load(
+                                                          "import/graphics/combat_cats/mc_kick.png").convert_alpha(),
+                                                      groups=self.all_sprites,
+                                                      z=LAYERS['combat_cat'])
+                            self.temp_cowboy_health = self.temp_cowboy_health - self.mc.damage
+                            self.mc_health_display.kill()
+                            self.enemy_health_display.kill()
+                            self.mc_health_display = Generic(pos=(825, 2180),
+                                                             surf=self.font1.render(
+                                                                 'TES PV:' + str(self.temp_mc_health) + '/' + str(
+                                                                     self.mc.health), False, (255, 255, 255)),
+                                                             groups=self.all_sprites,
+                                                             z=LAYERS['text'])
+                            self.enemy_health_display = Generic(pos=(1250, 2180),
+                                                                surf=self.font1.render('PV ENNEMIS:' + str(
+                                                                    self.temp_cowboy_health) + '/7', False,
+                                                                                       (255, 255, 255)),
+                                                                groups=self.all_sprites,
+                                                                z=LAYERS['text'])
+
+                    if event2.type == pygame.KEYDOWN and event2.key == pygame.K_3:
+
+                        self.enemy_input = randint(1, 3)
+                        if self.enemy_input == 1:
+                            self.enemy_display.kill()
+                            self.mc_display.kill()
+
+                            self.enemy_display = Generic(pos=(830, 1480),
+                                                         surf=pygame.image.load(
+                                                             "import/graphics/combat_cats/cb_punch.png").convert_alpha(),
+                                                         groups=self.all_sprites,
+                                                         z=LAYERS['combat_cat'])
+
+                            self.mc_display = Generic(pos=(690, 1480),
+                                                      surf=pygame.image.load(
+                                                          "import/graphics/combat_cats/mc_protection.png").convert_alpha(),
+                                                      groups=self.all_sprites,
+                                                      z=LAYERS['combat_cat'])
+                            self.temp_cowboy_health = self.temp_cowboy_health - self.mc.damage
+                            self.mc_health_display.kill()
+                            self.enemy_health_display.kill()
+                            self.mc_health_display = Generic(pos=(825, 2180),
+                                                             surf=self.font1.render(
+                                                                 'TES PV:' + str(self.temp_mc_health) + '/' + str(
+                                                                     self.mc.health), False, (255, 255, 255)),
+                                                             groups=self.all_sprites,
+                                                             z=LAYERS['text'])
+                            self.enemy_health_display = Generic(pos=(1250, 2180),
+                                                                surf=self.font1.render('PV ENNEMIS:' + str(
+                                                                    self.temp_cowboy_health) + '/7', False,
+                                                                                       (255, 255, 255)),
+                                                                groups=self.all_sprites,
+                                                                z=LAYERS['text'])
+                        if self.enemy_input == 2:
+                            self.enemy_display.kill()
+                            self.mc_display.kill()
+
+                            self.enemy_display = Generic(pos=(870, 1480),
+                                                         surf=pygame.image.load(
+                                                             "import/graphics/combat_cats/cb_kick.png").convert_alpha(),
+                                                         groups=self.all_sprites,
+                                                         z=LAYERS['combat_cat'])
+
+                            self.mc_display = Generic(pos=(680, 1480),
+                                                      surf=pygame.image.load(
+                                                          "import/graphics/combat_cats/mc_protection.png").convert_alpha(),
+                                                      groups=self.all_sprites,
+                                                      z=LAYERS['combat_cat'])
+                            self.temp_mc_health = self.temp_mc_health - 1
+                            self.mc_health_display.kill()
+                            self.enemy_health_display.kill()
+                            self.mc_health_display = Generic(pos=(825, 2180),
+                                                             surf=self.font1.render(
+                                                                 'TES PV:' + str(self.temp_mc_health) + '/' + str(
+                                                                     self.mc.health), False, (255, 255, 255)),
+                                                             groups=self.all_sprites,
+                                                             z=LAYERS['text'])
+                            self.enemy_health_display = Generic(pos=(1250, 2180),
+                                                                surf=self.font1.render('PV ENNEMIS:' + str(
+                                                                    self.temp_cowboy_health) + '/7', False,
+                                                                                       (255, 255, 255)),
+                                                                groups=self.all_sprites,
+                                                                z=LAYERS['text'])
+                        if self.enemy_input == 3:
+                            self.enemy_display.kill()
+                            self.mc_display.kill()
+
+                            self.mc_display = Generic(pos=(740, 1480),
+                                                      surf=pygame.image.load(
+                                                          "import/graphics/combat_cats/mc_protection.png").convert_alpha(),
+                                                      groups=self.all_sprites,
+                                                      z=LAYERS['combat_cat'])
+
+                            self.enemy_display = Generic(pos=(830, 1480),
+                                                         surf=pygame.image.load(
+                                                             "import/graphics/combat_cats/cb_protection.png").convert_alpha(),
+                                                         groups=self.all_sprites,
+                                                         z=LAYERS['combat_cat'])
+
+                        if self.tournament_index == 2 and self.first_enemy_index == 0:
+                            self.mc_display = Generic(pos=(710, 1480),
+                                                      surf=pygame.image.load(
+                                                          "import/graphics/combat_cats/mc_idle.png").convert_alpha(),
+                                                      groups=self.all_sprites,
+                                                      z=LAYERS['combat_cat'])
+                            self.enemy_display = Generic(pos=(830, 1480),
+                                                         surf=pygame.image.load(
+                                                             "import/graphics/combat_cats/cb_idle.png").convert_alpha(),
+                                                         groups=self.all_sprites,
+                                                         z=LAYERS['combat_cat'])
+                            self.mc_health_display = Generic(pos=(825, 2180),
+                                                             surf=self.font1.render(
+                                                                 'TES PV:' + str(self.temp_mc_health) + '/' + str(
+                                                                     self.mc.health), False, (255, 255, 255)),
+                                                             groups=self.all_sprites,
+                                                             z=LAYERS['text'])
+                            self.enemy_health_display = Generic(pos=(1250, 2180),
+                                                                surf=self.font1.render('PV ENNEMIS:' + str(
+                                                                    self.temp_cowboy_health) + '/7', False,
+                                                                                       (255, 255, 255)),
+                                                                groups=self.all_sprites,
+                                                                z=LAYERS['text'])
+                            self.first_enemy_index = 1
+
+                if self.tournament_index == 2 and self.first_enemy_index == 0:
+                    self.mc_display = Generic(pos=(710, 1480),
+                                              surf=pygame.image.load(
+                                                  "import/graphics/combat_cats/mc_idle.png").convert_alpha(),
+                                              groups=self.all_sprites,
+                                              z=LAYERS['combat_cat'])
+                    self.enemy_display = Generic(pos=(830, 1480),
+                                                 surf=pygame.image.load(
+                                                     "import/graphics/combat_cats/cb_idle.png").convert_alpha(),
+                                                 groups=self.all_sprites,
+                                                 z=LAYERS['combat_cat'])
+                    self.mc_health_display = Generic(pos=(825, 2180),
+                                                     surf=self.font1.render(
+                                                         'TES PV:' + str(self.temp_mc_health) + '/' + str(
+                                                             self.mc.health), False, (255, 255, 255)),
+                                                     groups=self.all_sprites,
+                                                     z=LAYERS['text'])
+                    self.enemy_health_display = Generic(pos=(1250, 2180),
+                                                        surf=self.font1.render('PV ENNEMIS:' + str(
+                                                            self.temp_cowboy_health) + '/7', False,
+                                                                               (255, 255, 255)),
+                                                        groups=self.all_sprites,
+                                                        z=LAYERS['text'])
+                    self.round_display = Generic(pos=(825, 2120),
+                                                 surf=self.font1.render(
+                                                     'ROUND 2', False, (244, 222, 7)),
+                                                 groups=self.all_sprites,
+                                                 z=LAYERS['text'])
+
+                    self.first_enemy_index = 1
+
+                if self.temp_cowboy_health <= 0:
+                    self.money_win = 3
+
+                if self.temp_mc_health <= 0:
+                    if self.hospital_index == 0:
+                        self.death_backround = Generic(pos=(430, 1580),
+                                                       surf=pygame.image.load(
+                                                           "import/graphics/ecrans/ecran_mort1.png").convert_alpha(),
+                                                       groups=self.all_sprites,
+                                                       z=LAYERS['victory_screen'])
+                        self.hospital_index = 1
+                    if event2.type == pygame.KEYDOWN and event2.key == pygame.K_SPACE:
+                        self.ko()
+
     def run(self, dt):
         self.display_surface.fill('black')
         self.all_sprites.custom_draw(self.player)
         self.all_sprites.update(dt)
         self.doumbe_interaction(dt)
+
+
+
+
 
 
 class CameraGroup(pygame.sprite.Group):
