@@ -1,7 +1,8 @@
 import pygame
-from settings import *
+from setting import *
 from player import Player
 from sprites import *
+from random import *
 from pytmx.util_pygame import load_pygame
 
 
@@ -12,11 +13,23 @@ class Level:
         self.all_sprites = CameraGroup()
         self.collision_sprites = pygame.sprite.Group()
         self.increment_doumbe = 0
+        self.gym_index = 0
+        self.player_input = 0
+        self.enemy_input = 0
+        self.shop_index = 0
+        self.tournament_index = 0
+        self.temp_mc_health = 9999
+        self.hospital_index = 0
+        self.font1 = pygame.font.Font('import/font/pixel2.ttf', 50)
+        self.first_enemy_index = 0
+        self.money_win = 0
+        self.temp_cowboy_health = 0
+
+        self.mc = MainCharacter()
+
         self.setup()
 
     def setup(self):
-        # ajout des differents elements à partir du fichier tiled
-
         tmx_data = load_pygame('import/data/final_map_.tmx')
 
         # fence
@@ -41,6 +54,7 @@ class Level:
                 surf=pygame.image.load("import/graphics/world/ground.png").convert_alpha(),
                 groups=self.all_sprites,
                 z=LAYERS['ground'])
+
     def doumbe_interaction(self, dt):
         keys = pygame.key.get_pressed()
 
@@ -571,26 +585,6 @@ class Level:
                     if event2.type == pygame.KEYDOWN and event2.key == pygame.K_SPACE:
                         self.ko()
 
-    def ko(self):
-        self.background_gym.kill()
-        self.enemy_display.kill()
-        self.mc_display.kill()
-        self.enemy_health_display.kill()
-        self.mc_health_display.kill()
-        self.round_display.kill()
-        self.death_backround.kill()
-        self.tournament_index = 0
-        self.gym_index = 0
-        self.player_input = 0
-        self.enemy_input = 0
-        self.hospital_index = 0
-        self.first_enemy_index = 0
-        self.mc.money = self.mc.money + self.money_win
-        self.money_win = 0
-        self.player.pos.x = 950
-        self.player.pos.y = 1300
-        self.temp_mc_health = self.mc.health
-
     def shop_interaction(self, dt):
         self.font = pygame.font.Font('import/font/pixel2.ttf', 80)
         if self.shop_index == 1:
@@ -719,6 +713,26 @@ class Level:
                                                  groups=self.all_sprites,
                                                  z=LAYERS['text'])
 
+    def ko(self):
+        self.background_gym.kill()
+        self.enemy_display.kill()
+        self.mc_display.kill()
+        self.enemy_health_display.kill()
+        self.mc_health_display.kill()
+        self.round_display.kill()
+        self.death_backround.kill()
+        self.tournament_index = 0
+        self.gym_index = 0
+        self.player_input = 0
+        self.enemy_input = 0
+        self.hospital_index = 0
+        self.first_enemy_index = 0
+        self.mc.money = self.mc.money + self.money_win
+        self.money_win = 0
+        self.player.pos.x = 950
+        self.player.pos.y = 1300
+        self.temp_mc_health = self.mc.health
+
     def run(self, dt):
         self.display_surface.fill('black')
         self.all_sprites.custom_draw(self.player)
@@ -728,12 +742,7 @@ class Level:
         self.shop_interaction(dt)
 
 
-
-
-
-
 class CameraGroup(pygame.sprite.Group):
-    # cette classe sert pour que la camera suit le joueur dans ses deplacements
     def __init__(self):
         super().__init__()
         self.display_surface = pygame.display.get_surface()
@@ -749,4 +758,82 @@ class CameraGroup(pygame.sprite.Group):
                     offset_rect = sprite.rect.copy()
                     offset_rect.center -= self.offset
                     self.display_surface.blit(sprite.image, offset_rect)
+
+
+class MainCharacter():
+    def __init__(self):
+        super().__init__()
+        self.health = 5
+        self.damage = 1
+        self.money = 1000
+
+    def potion_de_vie(self):
+        if self.money >= 5:
+            self.money = self.money - 5
+            self.health = self.health + 1
+
+    def potion_de_force(self):
+        if self.money >= 5:
+            self.money = self.money - 5
+            self.damage = self.damage + 1
+
+    def pasteque(self):
+        if self.money >= 30:
+            self.money = self.money - 30
+            self.damage = self.damage + 5
+            self.health = self.health + 5
+
+    def fruit_du_diable(self):
+        self.fruit_index = randint(1, 5)
+        if self.money >= 70:
+            self.money = self.money - 70
+            if self.fruit_index == 1:
+                self.damage = int(self.damage * 2)
+                self.health = int(self.health * 2)
+            if self.fruit_index == 2:
+                self.damage = self.damage + 10
+                self.health = self.health + 10
+            if self.fruit_index == 3:
+                self.damage = self.damage + 5
+                self.health = self.health + 50
+            if self.fruit_index == 4:
+                self.damage = int(self.damage / 2)
+                self.health = int(self.health / 2)
+            if self.fruit_index == 5:
+                self.damage = self.damage + 100
+                self.health = self.health + 100
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
