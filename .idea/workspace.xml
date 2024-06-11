@@ -4,7 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7c10046c-ba04-414c-8ea5-9ea2b6205152" name="Changes" comment="Modification de certaines variables dans level.py" />
+    <list default="true" id="7c10046c-ba04-414c-8ea5-9ea2b6205152" name="Changes" comment="Création d'un système de boutique et donc de monnaie avec la méthode shop_interaction.">
+      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/CACA.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/import/data/final_map_.tmx" beforeDir="false" afterPath="$PROJECT_DIR$/import/data/final_map_.tmx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/import/graphics/character/left/ecran boxe ta capté.psd" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -59,9 +68,39 @@
     "Python.main.executor": "Run",
     "Python.player.executor": "Run",
     "Python.settings.executor": "Run",
+    "git-widget-placeholder": "main",
     "last_opened_file_path": "C:/Users/ilmae/PycharmProjects/Real_Cat_Champion_"
   }
 }]]></component>
+  <component name="RunManager">
+    <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="CACA" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.main" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -355,7 +394,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Importation des assets et des sprites pour le projet" />
     <MESSAGE value="Creation d'un fichier texte Read Me" />
     <MESSAGE value="Creation et initialisation de la classe Player dans le fichier player.py" />
     <MESSAGE value="Creation d'un systeme de mouvement avec les touches du clavier" />
@@ -380,6 +418,7 @@
     <MESSAGE value="Modification du systeme de combat avec la methode gym_interaction (level.py)" />
     <MESSAGE value="Ajout d'un systeme de defaite avec la methode ko" />
     <MESSAGE value="Modification de certaines variables dans level.py" />
-    <option name="LAST_COMMIT_MESSAGE" value="Modification de certaines variables dans level.py" />
+    <MESSAGE value="Création d'un système de boutique et donc de monnaie avec la méthode shop_interaction." />
+    <option name="LAST_COMMIT_MESSAGE" value="Création d'un système de boutique et donc de monnaie avec la méthode shop_interaction." />
   </component>
 </project>
