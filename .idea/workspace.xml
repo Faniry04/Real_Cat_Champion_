@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7c10046c-ba04-414c-8ea5-9ea2b6205152" name="Changes" comment="Ajout de nouveaux ennemis et d'un écran de victoire. (level.py)">
-      <change beforePath="$PROJECT_DIR$/level.py" beforeDir="false" afterPath="$PROJECT_DIR$/level.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/player.py" beforeDir="false" afterPath="$PROJECT_DIR$/player.py" afterDir="false" />
+    <list default="true" id="7c10046c-ba04-414c-8ea5-9ea2b6205152" name="Changes" comment="Ajout de certains fichiers images concernant le combat">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,8 +66,8 @@
   }
 }</component>
   <component name="RunManager">
-    <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="CACA" />
+    <configuration name="main" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+      <module name="Real_Cat_Champion_" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -399,13 +398,27 @@
       <option name="project" value="LOCAL" />
       <updated>1718563533735</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="Ajout de certains commentaire et amelioration de la notation. (level.py et player.py)">
+      <option name="closed" value="true" />
+      <created>1718563726475</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1718563726475</updated>
+    </task>
+    <task id="LOCAL-00038" summary="Ajout de certains fichiers images concernant le combat">
+      <option name="closed" value="true" />
+      <created>1718563797961</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1718563797961</updated>
+    </task>
+    <option name="localTasksCounter" value="39" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Creation d'un systeme de mouvement avec les touches du clavier" />
-    <MESSAGE value="Creation d'un systeme d'animation du player" />
     <MESSAGE value="Creation d'un systeme de collision pour le player" />
     <MESSAGE value="Creation de l'attribut player dans level.py" />
     <MESSAGE value="Importation du Player à partir du fichier player.py" />
@@ -429,6 +442,8 @@
     <MESSAGE value="Création d'un système de boutique et donc de monnaie avec la méthode shop_interaction." />
     <MESSAGE value="Ajustement de certaines erreurs. Nous avons enlevé les fichiers inutiles qui ont impacté la fiabilité du code(2)." />
     <MESSAGE value="Ajout de nouveaux ennemis et d'un écran de victoire. (level.py)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Ajout de nouveaux ennemis et d'un écran de victoire. (level.py)" />
+    <MESSAGE value="Ajout de certains commentaire et amelioration de la notation. (level.py et player.py)" />
+    <MESSAGE value="Ajout de certains fichiers images concernant le combat" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ajout de certains fichiers images concernant le combat" />
   </component>
 </project>
