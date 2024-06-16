@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7c10046c-ba04-414c-8ea5-9ea2b6205152" name="Changes" comment="Ajustement de certaines erreurs. Nous avons enlevé les fichiers inutiles qui ont impacté la fiabilité du code(2).">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="7c10046c-ba04-414c-8ea5-9ea2b6205152" name="Changes" comment="Ajout de nouveaux ennemis et d'un écran de victoire. (level.py)">
       <change beforePath="$PROJECT_DIR$/level.py" beforeDir="false" afterPath="$PROJECT_DIR$/level.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/player.py" beforeDir="false" afterPath="$PROJECT_DIR$/player.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -391,12 +391,19 @@
       <option name="project" value="LOCAL" />
       <updated>1718100273242</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="Ajout de nouveaux ennemis et d'un écran de victoire. (level.py)">
+      <option name="closed" value="true" />
+      <created>1718563533735</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1718563533735</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Creation et initialisation de la classe Player dans le fichier player.py" />
     <MESSAGE value="Creation d'un systeme de mouvement avec les touches du clavier" />
     <MESSAGE value="Creation d'un systeme d'animation du player" />
     <MESSAGE value="Creation d'un systeme de collision pour le player" />
@@ -421,6 +428,7 @@
     <MESSAGE value="Modification de certaines variables dans level.py" />
     <MESSAGE value="Création d'un système de boutique et donc de monnaie avec la méthode shop_interaction." />
     <MESSAGE value="Ajustement de certaines erreurs. Nous avons enlevé les fichiers inutiles qui ont impacté la fiabilité du code(2)." />
-    <option name="LAST_COMMIT_MESSAGE" value="Ajustement de certaines erreurs. Nous avons enlevé les fichiers inutiles qui ont impacté la fiabilité du code(2)." />
+    <MESSAGE value="Ajout de nouveaux ennemis et d'un écran de victoire. (level.py)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ajout de nouveaux ennemis et d'un écran de victoire. (level.py)" />
   </component>
 </project>

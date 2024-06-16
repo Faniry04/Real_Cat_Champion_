@@ -1,5 +1,5 @@
 import pygame
-from settings import *
+from setting import *
 from player import Player
 from sprites import *
 from random import *
@@ -22,8 +22,15 @@ class Level:
         self.hospital_index = 0
         self.font1 = pygame.font.Font('import/font/pixel2.ttf', 50)
         self.first_enemy_index = 0
+        self.second_enemy_index = 0
+        self.third_enemy_index = 0
+        self.fourth_enemy_index = 0
         self.money_win = 0
-        self.temp_cowboy_health = 0
+        self.temp_cowboy_health = 999
+        self.temp_frog_health = 999
+        self.temp_gazo_health = 999
+        self.victory_index = 0
+        self.temp_doffy_health = 999
 
         self.mc = MainCharacter()
 
@@ -960,22 +967,19 @@ class Level:
                             self.combat_display.kill()
 
                             self.combat_display = Generic(pos=(780, 1480),
-                                                         surf=pygame.image.load(
-                                                             "import/graphics/combat_cats/1 1 d.png").convert_alpha(),
-                                                         groups=self.all_sprites,
-                                                         z=LAYERS['combat_cat'])
+                                                          surf=pygame.image.load(
+                                                              "import/graphics/combat_cats/1 1 d.png").convert_alpha(),
+                                                          groups=self.all_sprites,
+                                                          z=LAYERS['combat_cat'])
 
-
-                        if self.enemy_input ==2:
+                        if self.enemy_input == 2:
                             self.combat_display.kill()
 
-
                             self.combat_display = Generic(pos=(780, 1480),
-                                                      surf=pygame.image.load(
-                                                          "import/graphics/combat_cats/1 2 d.png").convert_alpha(),
-                                                      groups=self.all_sprites,
-                                                      z=LAYERS['combat_cat'])
-
+                                                          surf=pygame.image.load(
+                                                              "import/graphics/combat_cats/1 2 d.png").convert_alpha(),
+                                                          groups=self.all_sprites,
+                                                          z=LAYERS['combat_cat'])
 
                             self.temp_doffy_health = self.temp_doffy_health - self.mc.damage
 
@@ -996,13 +1000,11 @@ class Level:
                         if self.enemy_input == 3:
                             self.combat_display.kill()
 
-
                             self.combat_display = Generic(pos=(780, 1480),
-                                                      surf=pygame.image.load(
-                                                          "import/graphics/combat_cats/1 3 d.png").convert_alpha(),
-                                                      groups=self.all_sprites,
-                                                      z=LAYERS['combat_cat'])
-
+                                                          surf=pygame.image.load(
+                                                              "import/graphics/combat_cats/1 3 d.png").convert_alpha(),
+                                                          groups=self.all_sprites,
+                                                          z=LAYERS['combat_cat'])
 
                             self.temp_mc_health = self.temp_mc_health - 3
                             self.mc_health_display.kill()
@@ -1025,13 +1027,11 @@ class Level:
                         if self.enemy_input == 1:
                             self.combat_display.kill()
 
-
                             self.combat_display = Generic(pos=(780, 1480),
-                                                      surf=pygame.image.load(
-                                                          "import/graphics/combat_cats/2 1 d.png").convert_alpha(),
-                                                      groups=self.all_sprites,
-                                                      z=LAYERS['combat_cat'])
-
+                                                          surf=pygame.image.load(
+                                                              "import/graphics/combat_cats/2 1 d.png").convert_alpha(),
+                                                          groups=self.all_sprites,
+                                                          z=LAYERS['combat_cat'])
 
                             self.temp_mc_health = self.temp_mc_health - 3
                             self.mc_health_display.kill()
@@ -1051,23 +1051,20 @@ class Level:
                         if self.enemy_input == 2:
                             self.combat_display.kill()
 
-
                             self.combat_display = Generic(pos=(780, 1480),
-                                                      surf=pygame.image.load(
-                                                          "import/graphics/combat_cats/2 2 d.png").convert_alpha(),
-                                                      groups=self.all_sprites,
-                                                      z=LAYERS['combat_cat'])
-
+                                                          surf=pygame.image.load(
+                                                              "import/graphics/combat_cats/2 2 d.png").convert_alpha(),
+                                                          groups=self.all_sprites,
+                                                          z=LAYERS['combat_cat'])
 
                         if self.enemy_input == 3:
                             self.combat_display.kill()
 
                             self.combat_display = Generic(pos=(780, 1480),
-                                                         surf=pygame.image.load(
-                                                             "import/graphics/combat_cats/2 3 d.png").convert_alpha(),
-                                                         groups=self.all_sprites,
-                                                         z=LAYERS['combat_cat'])
-
+                                                          surf=pygame.image.load(
+                                                              "import/graphics/combat_cats/2 3 d.png").convert_alpha(),
+                                                          groups=self.all_sprites,
+                                                          z=LAYERS['combat_cat'])
 
                             self.temp_doffy_health = self.temp_doffy_health - self.mc.damage
                             self.mc_health_display.kill()
@@ -1091,12 +1088,11 @@ class Level:
                         if self.enemy_input == 1:
                             self.combat_display.kill()
 
-
                             self.combat_display = Generic(pos=(830, 1480),
-                                                         surf=pygame.image.load(
-                                                             "import/graphics/combat_cats/3 1 d.png").convert_alpha(),
-                                                         groups=self.all_sprites,
-                                                         z=LAYERS['combat_cat'])
+                                                          surf=pygame.image.load(
+                                                              "import/graphics/combat_cats/3 1 d.png").convert_alpha(),
+                                                          groups=self.all_sprites,
+                                                          z=LAYERS['combat_cat'])
 
                             self.temp_doffy_health = self.temp_doffy_health - self.mc.damage
                             self.mc_health_display.kill()
@@ -1116,13 +1112,11 @@ class Level:
                         if self.enemy_input == 2:
                             self.combat_display.kill()
 
-
                             self.combat_display = Generic(pos=(870, 1480),
-                                                         surf=pygame.image.load(
-                                                             "import/graphics/combat_cats/3 2 d.png").convert_alpha(),
-                                                         groups=self.all_sprites,
-                                                         z=LAYERS['combat_cat'])
-
+                                                          surf=pygame.image.load(
+                                                              "import/graphics/combat_cats/3 2 d.png").convert_alpha(),
+                                                          groups=self.all_sprites,
+                                                          z=LAYERS['combat_cat'])
 
                             self.temp_mc_health = self.temp_mc_health - 3
                             self.mc_health_display.kill()
@@ -1142,16 +1136,13 @@ class Level:
                         if self.enemy_input == 3:
                             self.combat_display.kill()
 
-
-
                             self.combat_display = Generic(pos=(830, 1480),
-                                                         surf=pygame.image.load(
-                                                             "import/graphics/combat_cats/3 3 d.png").convert_alpha(),
-                                                         groups=self.all_sprites,
-                                                         z=LAYERS['combat_cat'])
+                                                          surf=pygame.image.load(
+                                                              "import/graphics/combat_cats/3 3 d.png").convert_alpha(),
+                                                          groups=self.all_sprites,
+                                                          z=LAYERS['combat_cat'])
 
-                    if self.temp_doffy_health <=0:
-
+                    if self.temp_doffy_health <= 0:
                         self.background_gym.kill()
                         self.combat_display.kill()
 
@@ -1170,7 +1161,7 @@ class Level:
                         self.third_enemy_index = 0
                         self.money_win = 1000
                         self.mc.money = self.mc.money + self.money_win
-                        self.money_win =0
+                        self.money_win = 0
                         self.temp_mc_health = self.mc.health
 
                         self.player.pos.x = 1070
@@ -1178,10 +1169,7 @@ class Level:
 
                         self.victory_index = 1
 
-
-
-
-                if self.tournament_index == 5 and self.fourth_enemy_index ==0:
+                if self.tournament_index == 5 and self.fourth_enemy_index == 0:
                     self.combat_display = Generic(pos=(780, 1480),
                                                   surf=pygame.image.load(
                                                       "import/graphics/combat_cats/0 0 d.png").convert_alpha(),
@@ -1208,8 +1196,7 @@ class Level:
 
                     self.fourth_enemy_index = 1
 
-
-                if self.victory_index  == 1:
+                if self.victory_index == 1:
                     self.victory_screen = Generic(pos=(430, 1580),
                                                   surf=pygame.image.load(
                                                       "import/graphics/ecrans/victory_screen.png").convert_alpha(),
@@ -1351,8 +1338,8 @@ class Level:
 
     def ko(self):
         self.background_gym.kill()
-        self.enemy_display.kill()
-        self.mc_display.kill()
+        self.combat_display.kill()
+        self.money_win_display.kill()
         self.enemy_health_display.kill()
         self.mc_health_display.kill()
         self.round_display.kill()
@@ -1363,6 +1350,9 @@ class Level:
         self.enemy_input = 0
         self.hospital_index = 0
         self.first_enemy_index = 0
+        self.second_enemy_index = 0
+        self.fourth_enemy_index = 0
+        self.third_enemy_index = 0
         self.mc.money = self.mc.money + self.money_win
         self.money_win = 0
         self.player.pos.x = 950
@@ -1399,8 +1389,8 @@ class CameraGroup(pygame.sprite.Group):
 class MainCharacter():
     def __init__(self):
         super().__init__()
-        self.health = 5
-        self.damage = 1
+        self.health = 70
+        self.damage = 2
         self.money = 1000
 
     def potion_de_vie(self):
@@ -1424,11 +1414,11 @@ class MainCharacter():
         if self.money >= 70:
             self.money = self.money - 70
             if self.fruit_index == 1:
-                self.damage = int(self.damage * 2)
-                self.health = int(self.health * 2)
+                self.damage = self.damage + 2
+                self.health = self.health + 20
             if self.fruit_index == 2:
                 self.damage = self.damage + 10
-                self.health = self.health + 10
+                self.health = self.health + 40
             if self.fruit_index == 3:
                 self.damage = self.damage + 5
                 self.health = self.health + 50
@@ -1436,8 +1426,9 @@ class MainCharacter():
                 self.damage = int(self.damage / 2)
                 self.health = int(self.health / 2)
             if self.fruit_index == 5:
-                self.damage = self.damage + 100
-                self.health = self.health + 100
+                self.temp = self.damage
+                self.damage = self.health
+                self.health = self.damage
 
 
 

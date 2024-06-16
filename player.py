@@ -1,5 +1,6 @@
 import pygame
-from settings import *
+from setting import *
+import os
 
 class Player(pygame.sprite.Sprite):
 	def __init__(self, pos, group, collision_sprites):
@@ -9,20 +10,21 @@ class Player(pygame.sprite.Sprite):
 		self.status = 'down_idle'
 		self.frame_index = 0
 
-		# configuration generale
+		# general setup
 		self.import_assets()
 		self.image = self.animations[self.status][self.frame_index]
 		self.rect = self.image.get_rect(center = pos)
 		self.z = LAYERS['main']
 
-		# configuration pour les mouvements
+		# movement attributes
 		self.import_assets()
 		self.direction = pygame.math.Vector2()
 		self.pos = pygame.math.Vector2(self.rect.center)
-		self.speed = 200
+		self.speed = 400
 
 
 		#collision
+
 		self.hitbox = self.rect.copy().inflate((-126, -70))
 		self.collision_sprites = collision_sprites
 	def collision(self, direction):
@@ -48,6 +50,7 @@ class Player(pygame.sprite.Sprite):
 		self.animations = {'up': [[], [], [], []], 'down': [[], [], [], []], 'left': [[], [], [], []],
 						   'right': [[], [], [], []],
 						   'up_idle': [[], []], 'down_idle': [[], []], 'left_idle': [[], []], 'right_idle': [[], []]}
+
 
 		self.animations['up'][0] = pygame.image.load("import/graphics/character/up/0.png").convert_alpha()
 		self.animations['up'][1] = pygame.image.load('import/graphics/character/up/1.png').convert_alpha()
@@ -75,7 +78,6 @@ class Player(pygame.sprite.Sprite):
 			"import/graphics/character/right_idle/1.png").convert_alpha()
 		self.animations['left_idle'][0] = pygame.image.load("import/graphics/character/left_idle/0.png").convert_alpha()
 		self.animations['left_idle'][1] = pygame.image.load("import/graphics/character/left_idle/1.png").convert_alpha()
-
 	def animate(self, dt):
 		self.frame_index +=4 *dt
 		if self.frame_index >= len(self.animations[self.status]): self.frame_index = 0
@@ -101,26 +103,40 @@ class Player(pygame.sprite.Sprite):
 		else:
 			self.direction.x = 0
 	def get_status(self):
-		# si le joueur bouge pas on va ajouter '_idle' au status
+		#if player is not moving then we will add _idle to the status
 		if self.direction.magnitude() == 0:
 			self.status = self.status.split('_')[0] + '_idle'
 	def move(self,dt):
 
-		# normaliser un vecteur
+		# normalizing a vector
 		if self.direction.magnitude() > 0:
 			self.direction = self.direction.normalize()
 
-		# mouvement horizontale
+		# horizontal movement
 		self.pos.x += self.direction.x * self.speed * dt
 		self.hitbox.centerx = round(self.pos.x)
 		self.rect.centerx = self.hitbox.centerx
 		self.collision('horizontal')
 
-		# mouvement verticale
+		# vertical movement
 		self.pos.y += self.direction.y * self.speed * dt
 		self.hitbox.centery = round(self.pos.y)
 		self.rect.centery = self.hitbox.centery
 		self.collision('vertical')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 	def update(self, dt):
 		self.input()
