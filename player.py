@@ -1,5 +1,5 @@
 import pygame
-from setting import *
+from settings import *
 import os
 
 class Player(pygame.sprite.Sprite):
