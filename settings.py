@@ -19,5 +19,6 @@ LAYERS = {
 	'screen' : 9,
 	'combat_cat': 10,
 	'text' : 11,
-	'victory_screen': 12
+	'victory_screen' : 12,
+	'win_text' : 13
 }
