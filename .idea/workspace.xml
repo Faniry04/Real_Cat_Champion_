@@ -4,15 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7c10046c-ba04-414c-8ea5-9ea2b6205152" name="Changes" comment="Création d'un système de boutique et donc de monnaie avec la méthode shop_interaction.">
-      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/CACA.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="7c10046c-ba04-414c-8ea5-9ea2b6205152" name="Changes" comment="Ajustement de certaines erreurs. Nous avons enlevé les fichiers inutiles qui ont impacté la fiabilité du code(2).">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/import/data/final_map_.tmx" beforeDir="false" afterPath="$PROJECT_DIR$/import/data/final_map_.tmx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/import/graphics/character/left/ecran boxe ta capté.psd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/level.py" beforeDir="false" afterPath="$PROJECT_DIR$/level.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -389,12 +383,19 @@
       <option name="project" value="LOCAL" />
       <updated>1717591828859</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="Ajustement de certaines erreurs. Nous avons enlevé les fichiers inutiles qui ont impacté la fiabilité du code(2).">
+      <option name="closed" value="true" />
+      <created>1718100273242</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1718100273242</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Creation d'un fichier texte Read Me" />
     <MESSAGE value="Creation et initialisation de la classe Player dans le fichier player.py" />
     <MESSAGE value="Creation d'un systeme de mouvement avec les touches du clavier" />
     <MESSAGE value="Creation d'un systeme d'animation du player" />
@@ -419,6 +420,7 @@
     <MESSAGE value="Ajout d'un systeme de defaite avec la methode ko" />
     <MESSAGE value="Modification de certaines variables dans level.py" />
     <MESSAGE value="Création d'un système de boutique et donc de monnaie avec la méthode shop_interaction." />
-    <option name="LAST_COMMIT_MESSAGE" value="Création d'un système de boutique et donc de monnaie avec la méthode shop_interaction." />
+    <MESSAGE value="Ajustement de certaines erreurs. Nous avons enlevé les fichiers inutiles qui ont impacté la fiabilité du code(2)." />
+    <option name="LAST_COMMIT_MESSAGE" value="Ajustement de certaines erreurs. Nous avons enlevé les fichiers inutiles qui ont impacté la fiabilité du code(2)." />
   </component>
 </project>
