@@ -1,12 +1,12 @@
 from pygame.math import *
 
-#screen
+#différents  paramaètres pour la taille de l'écran d'affichage
 SCREEN_WIDTH = 1280
 SCREEN_HEIGHT = 720
+#Taille de chauqe Tile de la map tiled
 TILE_SIZE = 64
 
-
-
+#dictionnaire pour l'ordre d'affichage de chaque sprite
 LAYERS = {
 	'water': 0,
 	'ground': 1,
